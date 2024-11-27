@@ -50,7 +50,7 @@ function getDatabaseConnection() {
 try {
     $conn = getDatabaseConnection();
     if ($conn) {
-        echo "Kết nối CSDL thành công!";
+        //
     } else {
         echo "Không thể kết nối CSDL!";
     }

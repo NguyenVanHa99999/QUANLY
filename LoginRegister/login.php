@@ -67,6 +67,12 @@
         .login-container .form-text a:hover {
             text-decoration: underline;
         }
+
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -82,6 +88,16 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
             </div>
+            
+            <!-- Hiển thị thông báo lỗi nếu có -->
+            <?php
+            session_start();
+            if (isset($_SESSION['error_message'])) {
+                echo '<div class="error-message">' . $_SESSION['error_message'] . '</div>';
+                unset($_SESSION['error_message']);  // Xóa thông báo sau khi hiển thị
+            }
+            ?>
+
             <button type="submit" class="btn btn-primary">Log In</button>
             <div class="form-text mt-3">
                 Don't have an account? <a href="register.php">Register here</a>.

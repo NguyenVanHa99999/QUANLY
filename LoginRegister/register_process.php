@@ -1,6 +1,7 @@
 <?php
 // Kết nối cơ sở dữ liệu
-require_once $_SERVER['DOCUMENT_ROOT'] . 'config/connect.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/QUANLY/config/connect.php';
+
 
 $conn = getDatabaseConnection();
 if (!$conn) {
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($stmt->execute()) {
         echo 'Đăng ký thành công!';
         // Chuyển hướng đến trang đăng nhập
-        header("Location: LoginRegister/login.php");
+        header("Location: /QUANLY/LoginRegister/login.php");
         exit(); // Kết thúc script sau khi chuyển hướng
     } else {
         echo 'Lỗi xảy ra. Vui lòng thử lại!';
